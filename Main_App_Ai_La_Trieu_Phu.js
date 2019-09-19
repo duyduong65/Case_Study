@@ -34,56 +34,40 @@ let arrAnswer_D = ["Đất", "Đứng", "Thứ bảy", "Bàn chân", "Châu Mỹ
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let count = 0;
 
-function collectAnswer(){
-
+function collectAnswer(value){
+    if (value === arrAnswer[count]){
+        alert("Next");
+        ++count;
+        question.setQuestion(arrQuestion);
+        answer_A.setAnswer(arrAnswer_A);
+        answer_B.setAnswer(arrAnswer_B);
+        answer_C.setAnswer(arrAnswer_C);
+        answer_D.setAnswer(arrAnswer_D);
+        display();
+    }
 }
 
-let Answer = function(value,nameButton) {
+let Answer = function(value) {
     this._value = value;
 
     this.getValue = function () {
         return this._value;
     };
-    this.setAnswer = function () {
-        document.getElementById(nameButton).innerHTML = this.getValue();
+    this.setAnswer = function (nameButton) {
+        this._value = nameButton[count];
     }
 };
 
-let Question = function(value,nameButton){
+let Question = function(value){
     this._value = value;
 
     this.getValue = function () {
         return this._value;
     };
-    this.setQuestion = function () {
-        document.getElementById(nameButton).innerHTML = this.getValue();
+    this.setQuestion = function (namButton) {
+        this._value = namButton[count];
     }
 };
 
@@ -93,11 +77,11 @@ let value_answer_B = arrAnswer_B[count];
 let value_answer_C = arrAnswer_C[count];
 let value_answer_D = arrAnswer_D[count];
 
-let question = new Question(value_question,"'question'");
-let answer_A = new Answer(value_answer_A,"'answer_A'");
-let answer_B = new Answer(value_answer_B,"'answer_B '");
-let answer_C = new Answer(value_answer_C,"'answer_C'");
-let answer_D = new Answer(value_answer_D,"'answer_D'");
+let question = new Question(value_question);
+let answer_A = new Answer(value_answer_A);
+let answer_B = new Answer(value_answer_B);
+let answer_C = new Answer(value_answer_C);
+let answer_D = new Answer(value_answer_D);
 
 function display(){
     document.getElementById("question").innerHTML = question.getValue();
