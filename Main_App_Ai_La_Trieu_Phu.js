@@ -95,14 +95,14 @@ let value_answer_D = arrAnswer_D[count];
 
 let question = new Question(value_question,"'question'");
 let answer_A = new Answer(value_answer_A,"'answer_A'");
-let answer_B = new Answer(value_answer_B,"'answer_B'");
+let answer_B = new Answer(value_answer_B,"'answer_B '");
 let answer_C = new Answer(value_answer_C,"'answer_C'");
 let answer_D = new Answer(value_answer_D,"'answer_D'");
 
 function display(){
     document.getElementById("question").innerHTML = question.getValue();
-    document.getElementById("answer_A").innerHTML = answer_A.getValue();
-    document.getElementById("answer_B").innerHTML = answer_B.getValue();
-    document.getElementById("answer_C").innerHTML = answer_C.getValue();
-    document.getElementById("answer_D").innerHTML = answer_D.getValue();
+    document.getElementById("answer_A").value = answer_A.getValue();
+    document.getElementById("answer_B").value = answer_B.getValue();
+    document.getElementById("answer_C").value = answer_C.getValue();
+    document.getElementById("answer_D").value = answer_D.getValue();
 }
