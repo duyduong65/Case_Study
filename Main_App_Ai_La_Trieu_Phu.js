@@ -1,4 +1,3 @@
-
 let arrQuestion = [
     "Mạnh vì..., bạo vì tiền",
     "Cây ngay không sợ chết... ",
@@ -27,19 +26,12 @@ let arrAnswer_C = ["Lúa", "Gãy", "Chủ nhật", "Đầu gối", "Châu Úc", 
 let arrAnswer_D = ["Đất", "Đứng", "Thứ bảy", "Bàn chân", "Châu Mỹ", "C6H12O6", "Tuyên Quang", "Biển Chết", "Hội đồng quản trị tỉnh",
     "Lý Nhân Tông", "Cửa Khẩu Thanh Thủy", "Bỉ", "Quang Trung", "6-6-1983", "Lê Duy Dương"];
 
-
-
-
-
-
-
-
 let count = 0;
 
 function collectAnswer(value){
     if (value === arrAnswer[count]){
         alert("Next");
-        ++count;
+        count++;
         question.setQuestion(arrQuestion);
         answer_A.setAnswer(arrAnswer_A);
         answer_B.setAnswer(arrAnswer_B);
