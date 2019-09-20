@@ -28,8 +28,8 @@ let arrAnswer_D = ["Đất", "Đứng", "Thứ bảy", "Bàn chân", "Châu Mỹ
 
 let count = 0;
 
-function collectAnswer(value){
-    if (value === arrAnswer[count]){
+function collectAnswer(value) {
+    if (value === arrAnswer[count]) {
         alert("Next");
         count++;
         question.setQuestion(arrQuestion);
@@ -38,10 +38,18 @@ function collectAnswer(value){
         answer_C.setAnswer(arrAnswer_C);
         answer_D.setAnswer(arrAnswer_D);
         display();
+    } else {
+        alert("Bạn đã thua cuộc!");
+        count = 0;
+        question.setQuestion(arrQuestion);
+        answer_A.setAnswer(arrAnswer_A);
+        answer_B.setAnswer(arrAnswer_B);
+        answer_C.setAnswer(arrAnswer_C);
+        answer_D.setAnswer(arrAnswer_D);
     }
 }
 
-let Answer = function(value) {
+let Answer = function (value) {
     this._value = value;
 
     this.getValue = function () {
@@ -52,7 +60,7 @@ let Answer = function(value) {
     }
 };
 
-let Question = function(value){
+let Question = function (value) {
     this._value = value;
 
     this.getValue = function () {
@@ -75,7 +83,7 @@ let answer_B = new Answer(value_answer_B);
 let answer_C = new Answer(value_answer_C);
 let answer_D = new Answer(value_answer_D);
 
-function display(){
+function display() {
     document.getElementById("question").innerHTML = question.getValue();
     document.getElementById("answer_A").value = answer_A.getValue();
     document.getElementById("answer_B").value = answer_B.getValue();
