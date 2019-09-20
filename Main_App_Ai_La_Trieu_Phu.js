@@ -33,8 +33,7 @@ function collectAnswer(value) {
         alert("Next");
         count++;
         question.setQuestion(arrQuestion);
-        answer_A.setAnswer(arrAnswer_A);
-        answer_B.setAnswer(arrAnswer_B);
+        answer_A.setAnswer(arrAnswer_A);answer_B.setAnswer(arrAnswer_B);
         answer_C.setAnswer(arrAnswer_C);
         answer_D.setAnswer(arrAnswer_D);
         display();
