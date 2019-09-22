@@ -30,7 +30,17 @@ let count = 0;
 
 function collectAnswer(value) {
     if (value === arrAnswer[count]) {
-        alert("Next");
+        if ((count + 1) === 5) {
+            alert("Chúc mừng bạn đã đạt mốc 5 triệu");
+            alert("Mời bạn đến với câu thứ 6");
+        } else if ((count + 1) === 10) {
+            alert("Chúc mừng bạn đạt mốc 50 triệu");
+            alert("Mời bạn đến với câu thứ 11");
+        } else if ((count + 1) === 15) {
+            alert("Bạn là người thắng cuộc!")
+        } else {
+            alert("Mời bạn đến với câu thứ " + (count + 2));
+        }
         count++;
         question.setQuestion(arrQuestion);
         answer_A.setAnswer(arrAnswer_A);
@@ -39,7 +49,13 @@ function collectAnswer(value) {
         answer_D.setAnswer(arrAnswer_D);
         display();
     } else {
-        alert("Bạn đã thua cuộc!");
+        if ((count + 1) >= 0 && (count + 1) < 5) {
+            alert("Rất tiếc bạn đã ra về với 200 nghìn");
+        } else if ((count + 1) >= 5 && (count + 1) < 10) {
+            alert("Rất tiếc bạn đã ra về với 5 triệu");
+        } else if ((count + 1) >= 10 && (count + 1) < 15) {
+            alert("Rất tiếc bạn đã ra về với 50 triệu");
+        }
         count = 0;
         question.setQuestion(arrQuestion);
         answer_A.setAnswer(arrAnswer_A);
@@ -84,9 +100,18 @@ let answer_C = new Answer(value_answer_C);
 let answer_D = new Answer(value_answer_D);
 
 function display() {
-    document.getElementById("question").innerHTML = question.getValue();
+    document.getElementById("question").value = question._value;
     document.getElementById("answer_A").value = answer_A.getValue();
     document.getElementById("answer_B").value = answer_B.getValue();
     document.getElementById("answer_C").value = answer_C.getValue();
     document.getElementById("answer_D").value = answer_D.getValue();
+}
+
+function askAudience() {
+    let randomA = Math.round(Math.random() * 100);
+    let randomB = Math.round(Math.random() * (100 - randomA));
+    let randomC = Math.round(Math.random() * ((100 - randomA) - randomB));
+    let randomD = ((100 - randomA) - randomB) - randomC;
+
+    alert(` Có ${randomC} % chọn A \n ${randomB} % Chọn B \n ${randomC} % Chọn C \n ${randomD} % Chọn D`)
 }
