@@ -91,6 +91,11 @@ let question_15 = new Ques(arrQuestion[14], arrAnswer[14], arrAnswer_A[14], arrA
 let arrQuestionObj = [];
 arrQuestionObj.push(question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, question_9, question_10, question_11, question_12, question_13, question_14, question_15);
 let count = 0;
+let countHelp = 1;
+
+function reset() {
+    return count = 0, display();
+}
 
 function display() {
     document.getElementById('question').value = arrQuestionObj[count].getQuestion();
@@ -101,38 +106,44 @@ function display() {
 }
 
 function isUser5050() {
-    let arrAnswer = [];
-    arrAnswer.push(arrQuestionObj[count].getAnswer_A(), arrQuestionObj[count].getAnswer_B(), arrQuestionObj[count].getAnswer_C(), arrQuestionObj[count].getAnswer_D());
-    for (let i = 0; i < arrAnswer.length; i++) {
-        if (arrQuestionObj[count].getCollectAnswer() === arrAnswer[i]) {
-            switch (i) {
-                case 0 :
-                    document.getElementById('answer_B').value = " ";
-                    document.getElementById('answer_D').value = " ";
-                    break;
-                case 1:
-                    document.getElementById('answer_A').value = " ";
-                    document.getElementById('answer_C').value = " ";
-                    break;
-                case 2:
-                    document.getElementById('answer_A').value = " ";
-                    document.getElementById('answer_B').value = " ";
-                    break;
-                case 3:
-                    document.getElementById('answer_B').value = " ";
-                    document.getElementById('answer_C').value = " ";
-                    break;
+    if (countHelp === 1){
+        let arrAnswer = [];
+        arrAnswer.push(arrQuestionObj[count].getAnswer_A(), arrQuestionObj[count].getAnswer_B(), arrQuestionObj[count].getAnswer_C(), arrQuestionObj[count].getAnswer_D());
+        for (let i = 0; i < arrAnswer.length; i++) {
+            if (arrQuestionObj[count].getCollectAnswer() === arrAnswer[i]) {
+                switch (i) {
+                    case 0 :
+                        document.getElementById('answer_B').value = " ";
+                        document.getElementById('answer_D').value = " ";
+                        break;
+                    case 1:
+                        document.getElementById('answer_A').value = " ";
+                        document.getElementById('answer_C').value = " ";
+                        break;
+                    case 2:
+                        document.getElementById('answer_A').value = " ";
+                        document.getElementById('answer_B').value = " ";
+                        break;
+                    case 3:
+                        document.getElementById('answer_B').value = " ";
+                        document.getElementById('answer_C').value = " ";
+                        break;
+                }
             }
+            --countHelp;
         }
     }
 }
 
 function askAudience() {
-    let randomA = Math.ceil(Math.random() * 80);
-    let randomB = Math.ceil(Math.random() * (100 - randomA));
-    let randomC = Math.ceil(Math.random() * ((100 - randomA) - randomB));
-    let randomD = ((100 - randomA) - randomB) - randomC;
-    alert(` Có ${randomA} % chọn A \n ${randomB} % Chọn B \n ${randomC} % Chọn C \n ${randomD} % Chọn D`)
+   if (countHelp === 1){
+       let randomA = Math.ceil(Math.random() * 80);
+       let randomB = Math.ceil(Math.random() * (100 - randomA));
+       let randomC = Math.ceil(Math.random() * ((100 - randomA) - randomB));
+       let randomD = ((100 - randomA) - randomB) - randomC;
+       alert(` Có ${randomA} % chọn A \n ${randomB} % Chọn B \n ${randomC} % Chọn C \n ${randomD} % Chọn D`)
+       --countHelp;
+   }
 }
 
 function collectAnswer(value) {
