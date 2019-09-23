@@ -118,14 +118,14 @@ function isUser5050() {
             break;
         case arrQuestionObj[count].getAnswer_B():
             a.value = " ";
-            c.value = " ";
+            d.value = " ";
             break;
         case arrQuestionObj[count].getAnswer_C():
-            a.value = " ";
+            d.value = " ";
             b.value = " ";
             break;
         case arrQuestionObj[count].getAnswer_D():
-            b.value = " ";
+            a.value = " ";
             c.value = " ";
             break;
     }
@@ -145,16 +145,16 @@ function askAudience() {
         let randomValue = Math.round(Math.random() * 50 + 40);
         switch (arrQuestionObj[count].getCollectAnswer()) {
             case arrQuestionObj[count].getAnswer_A() :
-                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn " + "'" + arrQuestionObj[count].getAnswer_C() + "'");
                 break;
             case arrQuestionObj[count].getAnswer_B() :
-                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn " + "'" + arrQuestionObj[count].getAnswer_C() + "'");
                 break;
             case arrQuestionObj[count].getAnswer_C() :
-                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn " + "'" + arrQuestionObj[count].getAnswer_A() + "'");
                 break;
             case arrQuestionObj[count].getAnswer_D() :
-                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                alert(randomValue + " % khán giả chọn " + "'" + arrQuestionObj[count].getCollectAnswer() + "'" + ", " + (100 - randomValue) + " % khán chọn " + "'" + arrQuestionObj[count].getAnswer_B() + "'");
                 break;
         }
     }
