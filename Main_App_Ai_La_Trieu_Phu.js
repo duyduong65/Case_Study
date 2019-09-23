@@ -91,6 +91,10 @@ let question_15 = new Ques(arrQuestion[14], arrAnswer[14], arrAnswer_A[14], arrA
 let arrQuestionObj = [];
 arrQuestionObj.push(question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, question_9, question_10, question_11, question_12, question_13, question_14, question_15);
 let count = 0;
+let a = document.getElementById('answer_A');
+let b = document.getElementById('answer_B');
+let c = document.getElementById('answer_C');
+let d = document.getElementById('answer_D');
 
 function reset() {
     document.getElementById('save1').innerHTML = `<button type="button" onclick="isUser5050()" >50/50</button>`;
@@ -100,43 +104,44 @@ function reset() {
 
 function display() {
     document.getElementById('question').value = arrQuestionObj[count].getQuestion();
-    document.getElementById('answer_A').value = arrQuestionObj[count].getAnswer_A();
-    document.getElementById('answer_B').value = arrQuestionObj[count].getAnswer_B();
-    document.getElementById('answer_C').value = arrQuestionObj[count].getAnswer_C();
-    document.getElementById('answer_D').value = arrQuestionObj[count].getAnswer_D();
+    a.value = arrQuestionObj[count].getAnswer_A();
+    b.value = arrQuestionObj[count].getAnswer_B();
+    c.value = arrQuestionObj[count].getAnswer_C();
+    d.value = arrQuestionObj[count].getAnswer_D();
 }
 
 function isUser5050() {
     switch (arrQuestionObj[count].getCollectAnswer()) {
         case arrQuestionObj[count].getAnswer_A() :
-            document.getElementById('answer_B').value = " ";
-            document.getElementById('answer_D').value = " ";
+            b.value = " ";
+            d.value = " ";
             break;
         case arrQuestionObj[count].getAnswer_B():
-            document.getElementById('answer_A').value = " ";
-            document.getElementById('answer_C').value = " ";
+            a.value = " ";
+            c.value = " ";
             break;
         case arrQuestionObj[count].getAnswer_C():
-            document.getElementById('answer_A').value = " ";
-            document.getElementById('answer_B').value = " ";
+            a.value = " ";
+            b.value = " ";
             break;
         case arrQuestionObj[count].getAnswer_D():
-            document.getElementById('answer_B').value = " ";
-            document.getElementById('answer_C').value = " ";
+            b.value = " ";
+            c.value = " ";
             break;
     }
     document.getElementById('save1').innerHTML = "";
 }
 
 function askAudience() {
-    if (document.getElementById('save1').innerHTML !== "") {
+    if (a.value !== " " && b.value !== " " && c.value !== " " && d.value !== " ") {
         let randomA = Math.ceil(Math.random() * 70);
         let randomB = Math.ceil(Math.random() * (70 - randomA));
         let randomC = Math.ceil(Math.random() * ((100 - randomA) - randomB));
         let randomD = ((100 - randomA) - randomB) - randomC;
         alert(` Có ${randomA} % chọn A \n ${randomB} % Chọn B \n ${randomC} % Chọn C \n ${randomD} % Chọn D`)
 
-    } else {
+    }
+    if (a.value === " " || b.value === " " || c.value === " " || d.value === " ") {
         let randomValue = Math.round(Math.random() * 50 + 40);
         switch (arrQuestionObj[count].getCollectAnswer()) {
             case arrQuestionObj[count].getAnswer_A() :
