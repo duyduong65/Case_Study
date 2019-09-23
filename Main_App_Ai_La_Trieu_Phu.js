@@ -142,16 +142,16 @@ function askAudience() {
             let randomValue = Math.round(Math.random() * 50 + 40);
             switch (arrQuestionObj[count].getCollectAnswer()) {
                 case arrQuestionObj[count].getAnswer_A() :
-                    alert(randomValue + " % khán giả chọn A, " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                    alert(randomValue + " % khán giả chọn " + arrQuestionObj[count].getCollectAnswer() + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
                     break;
                 case arrQuestionObj[count].getAnswer_B() :
-                    alert(randomValue + " % khán giả chọn B, " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                    alert(randomValue + " % khán giả chọn " + arrQuestionObj[count].getCollectAnswer() + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
                     break;
                 case arrQuestionObj[count].getAnswer_C() :
-                    alert(randomValue + " % khán giả chọn C, " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                    alert(randomValue + " % khán giả chọn " + arrQuestionObj[count].getCollectAnswer() + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
                     break;
                 case arrQuestionObj[count].getAnswer_D() :
-                    alert(randomValue + " % khán giả chọn D, " + (100 - randomValue) + " % khán chọn phương án còn lại");
+                    alert(randomValue + " % khán giả chọn " + arrQuestionObj[count].getCollectAnswer() + ", " + (100 - randomValue) + " % khán chọn phương án còn lại");
                     break;
             }
         }
