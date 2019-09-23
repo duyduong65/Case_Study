@@ -100,6 +100,33 @@ function display() {
     document.getElementById('answer_D').value = arrQuestionObj[count].getAnswer_D();
 }
 
+function isUser5050() {
+    let arrAnswer = [];
+    arrAnswer.push(arrQuestionObj[count].getAnswer_A(), arrQuestionObj[count].getAnswer_B(), arrQuestionObj[count].getAnswer_C(), arrQuestionObj[count].getAnswer_D());
+    for (let i = 0; i < arrAnswer.length; i++) {
+        if (arrQuestionObj[count].getCollectAnswer() === arrAnswer[i]) {
+            switch (i) {
+                case 0 :
+                    document.getElementById('answer_B').value = " ";
+                    document.getElementById('answer_D').value = " ";
+                    break;
+                case 1:
+                    document.getElementById('answer_A').value = " ";
+                    document.getElementById('answer_C').value = " ";
+                    break;
+                case 2:
+                    document.getElementById('answer_A').value = " ";
+                    document.getElementById('answer_B').value = " ";
+                    break;
+                case 3:
+                    document.getElementById('answer_B').value = " ";
+                    document.getElementById('answer_C').value = " ";
+                    break;
+            }
+        }
+    }
+}
+
 function askAudience() {
     let randomA = Math.ceil(Math.random() * 80);
     let randomB = Math.ceil(Math.random() * (100 - randomA));
