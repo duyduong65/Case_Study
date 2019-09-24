@@ -22,9 +22,10 @@ let arrAnswer_A = ["Gạo", "Cháy", "Thứ ba", "Miệng", "Châu Á", "CaO", "
 let arrAnswer_B = ["Vàng", "Ngạt", "Thứ năm", "Tai", "Châu Âu", "CaOH2", "Thái Nguyên", "Đại Tây Dương", "Hội đồng quản trị xã",
     "Trần Nhân tông", "Vị Xuyên", "Australia", "Lê Lợi", "28-10-1892", "Lê Thanh Hải"];
 let arrAnswer_C = ["Lúa", "Gãy", "Chủ nhật", "Đầu gối", "Châu Úc", "CaCO3", "Lào Cai", "Thái Bình Dương", "Hội đồng quản trị huyện",
-    "Lý Thái tổ", "Điện Biên Phủ", "Hà Lan", "Nguyễn Huệ", "27-3-1981", "Tùng 10m question"];
+    "Lý Thái tổ", "Điện Biên Phủ", "Hà Lan", "Hàm Nghi", "27-3-1981", "Tùng 10m question"];
 let arrAnswer_D = ["Đất", "Đứng", "Thứ bảy", "Bàn chân", "Châu Mỹ", "C6H12O6", "Tuyên Quang", "Biển Chết", "Hội đồng quản trị tỉnh",
     "Lý Nhân Tông", "Cửa Khẩu Thanh Thủy", "Bỉ", "Quang Trung", "6-6-1983", "Lê Duy Dương"];
+
 
 let Ques = function (question, collectAnswer, answer_A, answer_B, answer_C, answer_D) {
     this.question = question;
