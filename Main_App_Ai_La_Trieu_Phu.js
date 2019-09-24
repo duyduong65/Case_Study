@@ -185,9 +185,9 @@ function collectAnswer(value) {
         } else if ((count + 1) >= 10 && (count + 1) < 15) {
             alert("Sai rồi! Bạn phải ra về với 50 triệu!")
         }
-        return count = 0;
+        return count = 0, display();
     }
-    display();
+
 }
 
 
